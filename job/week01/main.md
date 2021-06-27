@@ -504,3 +504,41 @@ public class XClassLoader extends ClassLoader {
 文件：JVM内存.png
 
 ![JVM内存](JVM内存.png)
+
+
+
+# 第四题
+
+线上的环境，因为一些环境配置的问题导致启动的虚拟机版本冲突，用本地跑了一个项目
+
+> java -jar base.jar
+
+先看一下堆占用情况。jmap
+
+![image-20210627114908514](04题jmap.png)
+
+这里看到了s0和s1的总空间大小不一致。使用-XX:-UseAdaptiveSizePolicy  后，发现s0和s1一样大了。
+
+老年代和新生代的使用率分别为27%和20%，算是一个比较合理的使用。但是survive区的使用率都偏高，但考虑是自适应的，会逐渐增加，应该没有影响。
+
+![](04题jstat-gcutil.png)
+
+看得出Eden区的变化比较明显，有大量的新对象创建，然后old区里面的对象比较趋于稳定。堆外空间使用率都普遍偏高。容易发生oom出来。适当提高一些堆外存储的（matespace和ccs的）空间。
+
+
+
+![image-20210627133807020](04题jmap -histo.png)
+就char[]、byte[]和int占有的最多，第7-13应该是因为springboot框架的生成的。
+
+
+
+
+
+# 第五题（搁置）
+
+> java -XX:-UseAdaptiveSizePolicy -XX:+UseG1GC  -jar .\basis-0.0.1-SNAPSHOT.jar
+
+![image-20210627135041030](05题jmap.png)
+
+
+
