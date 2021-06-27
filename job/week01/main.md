@@ -428,4 +428,79 @@ StackMapTable: number_of_entries = 6
 
 - number_of_entries表示entries的个数；
 - 每一个entry元素都表示一个方法的stakemapFrame(栈帧)；
-- 
+
+
+
+# 第二题
+
+project\src\main\java\top\zsmile\jvm\classloader\XClassLoader
+
+```java
+public class XClassLoader extends ClassLoader {
+
+    public static void main(String[] args) throws ClassNotFoundException {
+        String className = "Hello";
+        String methodName = "hello";
+        ClassLoader xClassLoader = new XClassLoader();
+        Class<?> helloClass = xClassLoader.loadClass(className);
+
+        try {
+            Object o = helloClass.newInstance();
+            Method method = helloClass.getMethod(methodName);
+            method.invoke(o);
+        } catch (NoSuchMethodException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (InvocationTargetException e) {
+            e.printStackTrace();
+        }
+
+
+    }
+
+    @Override
+    protected Class<?> findClass(String name) throws ClassNotFoundException {
+        final String suffix = ".xlass";
+        InputStream resourceAsStream = this.getClass().getResourceAsStream(name + suffix);
+
+        try {
+            int available = resourceAsStream.available();
+            byte[] bytes = new byte[available];
+            resourceAsStream.read(bytes);
+
+            byte[] decode = decode(bytes);
+            return defineClass(name, decode, 0, decode.length);
+        } catch (IOException e) {
+            e.printStackTrace();
+            throw new ClassNotFoundException();
+        } finally {
+            if (resourceAsStream != null) {
+                try {
+                    resourceAsStream.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+    public byte[] decode(byte[] code) {
+        byte[] decodeBytes = new byte[code.length];
+        for (int i = 0; i < code.length; i++) {
+            decodeBytes[i] = (byte) (255 - code[i]);
+        }
+        return decodeBytes;
+    }
+}
+```
+
+
+
+# 第三题
+
+文件：JVM内存.png
+
+![JVM内存](JVM内存.png)
