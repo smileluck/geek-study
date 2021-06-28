@@ -4,7 +4,12 @@ public class Hello {
 
 
     public static void main(String[] args) {
-        map_tx2bd(23.394300690824174,116.66392321577842);
+        String lats = "23.394300690824174";
+        String lons = "116.66392321577842";
+
+        double lat = Double.parseDouble(lats);
+        double lon = Double.parseDouble(lons);
+        map_tx2bd(lat, lon);
     }
 
     public static  double[] map_tx2bd(double lat, double lon){
