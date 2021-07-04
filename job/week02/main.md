@@ -402,42 +402,170 @@ Heap
 然后我们再看一下GC日志信息
 
 ```shell
-0.198: [GC (Allocation Failure) [PSYoungGen: 261989K->43506K(305664K)] 261989K->78446K(1005056K), 0.0156817 secs] [Times: user=0.00 sys=0.09, real=0.02 secs] 
-0.254: [GC (Allocation Failure) [PSYoungGen: 305650K->43499K(305664K)] 340590K->157490K(1005056K), 0.0228875 secs] [Times: user=0.02 sys=0.08, real=0.02 secs] 
-0.315: [GC (Allocation Failure) [PSYoungGen: 305643K->43505K(305664K)] 419634K->234121K(1005056K), 0.0218060 secs] [Times: user=0.05 sys=0.03, real=0.02 secs] 
-0.372: [GC (Allocation Failure) [PSYoungGen: 305419K->43504K(305664K)] 496035K->305498K(1005056K), 0.0216133 secs] [Times: user=0.14 sys=0.03, real=0.02 secs] 
-0.428: [GC (Allocation Failure) [PSYoungGen: 305648K->43516K(305664K)] 567642K->379658K(1005056K), 0.0214147 secs] [Times: user=0.05 sys=0.05, real=0.02 secs] 
-0.484: [GC (Allocation Failure) [PSYoungGen: 305660K->43502K(160256K)] 641802K->440680K(859648K), 0.0195325 secs] [Times: user=0.00 sys=0.09, real=0.02 secs] 
-0.519: [GC (Allocation Failure) [PSYoungGen: 160238K->70521K(232960K)] 557416K->477216K(932352K), 0.0144999 secs] [Times: user=0.09 sys=0.00, real=0.01 secs] 
-0.550: [GC (Allocation Failure) [PSYoungGen: 187257K->91550K(232960K)] 593952K->508356K(932352K), 0.0182251 secs] [Times: user=0.09 sys=0.00, real=0.02 secs] 
-0.584: [GC (Allocation Failure) [PSYoungGen: 208286K->108761K(232960K)] 625092K->540816K(932352K), 0.0218468 secs] [Times: user=0.09 sys=0.00, real=0.02 secs] 
-0.623: [GC (Allocation Failure) [PSYoungGen: 225497K->75663K(232960K)] 657552K->566373K(932352K), 0.0235529 secs] [Times: user=0.17 sys=0.02, real=0.02 secs] 
-0.662: [GC (Allocation Failure) [PSYoungGen: 192399K->42511K(232960K)] 683109K->597641K(932352K), 0.0220678 secs] [Times: user=0.06 sys=0.03, real=0.02 secs] 
-0.699: [GC (Allocation Failure) [PSYoungGen: 159247K->37588K(232960K)] 714377K->629427K(932352K), 0.0171352 secs] [Times: user=0.01 sys=0.06, real=0.02 secs] 
-0.732: [GC (Allocation Failure) [PSYoungGen: 154324K->41816K(232960K)] 746163K->666756K(932352K), 0.0169413 secs] [Times: user=0.11 sys=0.06, real=0.02 secs] 
-0.749: [Full GC (Ergonomics) [PSYoungGen: 41816K->0K(232960K)] [ParOldGen: 624940K->331384K(699392K)] 666756K->331384K(932352K), [Metaspace: 2628K->2628K(1056768K)], 0.0645287 secs] [Times: user=0.28 sys=0.02, real=0.07 secs] 
-0.832: [GC (Allocation Failure) [PSYoungGen: 116736K->40506K(232960K)] 448120K->371890K(932352K), 0.0085852 secs] [Times: user=0.00 sys=0.00, real=0.01 secs] 
-0.860: [GC (Allocation Failure) [PSYoungGen: 157242K->41094K(232960K)] 488626K->407817K(932352K), 0.0139955 secs] [Times: user=0.00 sys=0.00, real=0.01 secs] 
-0.894: [GC (Allocation Failure) [PSYoungGen: 157827K->37658K(232960K)] 524549K->442141K(932352K), 0.0133542 secs] [Times: user=0.08 sys=0.00, real=0.01 secs] 
-0.926: [GC (Allocation Failure) [PSYoungGen: 154394K->39095K(232960K)] 558877K->478899K(932352K), 0.0133458 secs] [Times: user=0.09 sys=0.00, real=0.01 secs] 
-0.958: [GC (Allocation Failure) [PSYoungGen: 155831K->38010K(232960K)] 595635K->512989K(932352K), 0.0131853 secs] [Times: user=0.08 sys=0.00, real=0.01 secs] 
-0.986: [GC (Allocation Failure) [PSYoungGen: 154746K->39071K(232960K)] 629725K->549135K(932352K), 0.0136251 secs] [Times: user=0.09 sys=0.00, real=0.01 secs] 
-1.018: [GC (Allocation Failure) [PSYoungGen: 155807K->40867K(232960K)] 665871K->587232K(932352K), 0.0142154 secs] [Times: user=0.09 sys=0.00, real=0.01 secs] 
-1.049: [GC (Allocation Failure) [PSYoungGen: 156980K->40588K(232960K)] 703345K->623837K(932352K), 0.0138534 secs] [Times: user=0.09 sys=0.00, real=0.01 secs] 
-1.080: [GC (Allocation Failure) [PSYoungGen: 157324K->41269K(232960K)] 740573K->661896K(932352K), 0.0143789 secs] [Times: user=0.09 sys=0.00, real=0.02 secs] 
+0.216: [GC (Allocation Failure) 0.216: [ParNew: 279528K->34943K(314560K), 0.0271946 secs] 279528K->89611K(1013632K), 0.0273393 secs] [Times: user=0.13 sys=0.03, real=0.03 secs] 
+0.287: [GC (Allocation Failure) 0.287: [ParNew: 314559K->34944K(314560K), 0.0334648 secs] 369227K->171625K(1013632K), 0.0335250 secs] [Times: user=0.05 sys=0.11, real=0.03 secs] 
+0.361: [GC (Allocation Failure) 0.361: [ParNew: 314560K->34944K(314560K), 0.0326968 secs] 451241K->248821K(1013632K), 0.0327615 secs] [Times: user=0.19 sys=0.00, real=0.03 secs] 
+0.429: [GC (Allocation Failure) 0.429: [ParNew: 314560K->34943K(314560K), 0.0355520 secs] 528437K->332905K(1013632K), 0.0356304 secs] [Times: user=0.16 sys=0.01, real=0.04 secs] 
+0.503: [GC (Allocation Failure) 0.503: [ParNew: 314559K->34944K(314560K), 0.0317682 secs] 612521K->407532K(1013632K), 0.0318313 secs] [Times: user=0.14 sys=0.02, real=0.03 secs] 
+0.535: [GC (CMS Initial Mark) [1 CMS-initial-mark: 372588K(699072K)] 407838K(1013632K), 0.0002304 secs] [Times: user=0.00 sys=0.00, real=0.00 secs] 
+0.535: [CMS-concurrent-mark-start]
+0.539: [CMS-concurrent-mark: 0.003/0.003 secs] [Times: user=0.00 sys=0.00, real=0.00 secs] 
+0.539: [CMS-concurrent-preclean-start]
+0.539: [CMS-concurrent-preclean: 0.001/0.001 secs] [Times: user=0.00 sys=0.00, real=0.00 secs] 
+0.539: [CMS-concurrent-abortable-preclean-start]
+0.574: [GC (Allocation Failure) 0.574: [ParNew: 314560K->34942K(314560K), 0.0331992 secs] 687148K->485954K(1013632K), 0.0332623 secs] [Times: user=0.16 sys=0.02, real=0.03 secs] 
+0.644: [GC (Allocation Failure) 0.644: [ParNew: 314558K->34943K(314560K), 0.0361581 secs] 765570K->569800K(1013632K), 0.0362144 secs] [Times: user=0.17 sys=0.02, real=0.04 secs] 
+0.717: [GC (Allocation Failure) 0.717: [ParNew: 314559K->34944K(314560K), 0.0308337 secs] 849416K->639894K(1013632K), 0.0308942 secs] [Times: user=0.16 sys=0.03, real=0.03 secs] 
+0.783: [GC (Allocation Failure) 0.783: [ParNew: 314508K->34943K(314560K), 0.0314874 secs] 919458K->712353K(1013632K), 0.0315475 secs] [Times: user=0.17 sys=0.01, real=0.03 secs] 
+0.815: [CMS-concurrent-abortable-preclean: 0.006/0.275 secs] [Times: user=0.81 sys=0.08, real=0.27 secs] 
+0.815: [GC (CMS Final Remark) [YG occupancy: 41025 K (314560 K)]0.815: [Rescan (parallel) , 0.0003083 secs]0.815: [weak refs processing, 0.0000082 secs]0.815: [class unloading, 0.0001874 secs]0.815: [scrub symbol table, 0.0002548 secs]0.816: [scrub string table, 0.0000855 secs][1 CMS-remark: 677410K(699072K)] 718436K(1013632K), 0.0008966 secs] [Times: user=0.00 sys=0.00, real=0.00 secs] 
+0.816: [CMS-concurrent-sweep-start]
+0.817: [CMS-concurrent-sweep: 0.001/0.001 secs] [Times: user=0.00 sys=0.00, real=0.00 secs] 
+0.817: [CMS-concurrent-reset-start]
+0.818: [CMS-concurrent-reset: 0.001/0.001 secs] [Times: user=0.00 sys=0.00, real=0.00 secs] 
+0.853: [GC (Allocation Failure) 0.853: [ParNew: 314559K->34942K(314560K), 0.0216930 secs] 853474K->647031K(1013632K), 0.0217527 secs] [Times: user=0.09 sys=0.00, real=0.02 secs] 
+0.875: [GC (CMS Initial Mark) [1 CMS-initial-mark: 612088K(699072K)] 652924K(1013632K), 0.0001053 secs] [Times: user=0.00 sys=0.00, real=0.00 secs] 
+0.875: [CMS-concurrent-mark-start]
+0.877: [CMS-concurrent-mark: 0.002/0.002 secs] [Times: user=0.05 sys=0.00, real=0.00 secs] 
+0.877: [CMS-concurrent-preclean-start]
+0.878: [CMS-concurrent-preclean: 0.001/0.001 secs] [Times: user=0.00 sys=0.00, real=0.00 secs] 
+0.878: [CMS-concurrent-abortable-preclean-start]
+0.919: [GC (Allocation Failure) 0.919: [ParNew: 314558K->34943K(314560K), 0.0243508 secs] 926647K->724284K(1013632K), 0.0244692 secs] [Times: user=0.17 sys=0.00, real=0.02 secs] 
+0.943: [CMS-concurrent-abortable-preclean: 0.001/0.065 secs] [Times: user=0.20 sys=0.00, real=0.07 secs] 
+0.944: [GC (CMS Final Remark) [YG occupancy: 40625 K (314560 K)]0.944: [Rescan (parallel) , 0.0003482 secs]0.944: [weak refs processing, 0.0000076 secs]0.944: [class unloading, 0.0001757 secs]0.944: [scrub symbol table, 0.0002569 secs]0.944: [scrub string table, 0.0000851 secs][1 CMS-remark: 689340K(699072K)] 729965K(1013632K), 0.0009196 secs] [Times: user=0.00 sys=0.00, real=0.00 secs] 
+0.945: [CMS-concurrent-sweep-start]
+0.946: [CMS-concurrent-sweep: 0.001/0.001 secs] [Times: user=0.00 sys=0.00, real=0.00 secs] 
+0.946: [CMS-concurrent-reset-start]
+0.947: [CMS-concurrent-reset: 0.001/0.001 secs] [Times: user=0.00 sys=0.00, real=0.00 secs] 
+0.983: [GC (Allocation Failure) 0.983: [ParNew: 314559K->34942K(314560K), 0.0199862 secs] 693724K->494478K(1013632K), 0.0200485 secs] [Times: user=0.19 sys=0.00, real=0.02 secs] 
+1.003: [GC (CMS Initial Mark) [1 CMS-initial-mark: 459535K(699072K)] 500151K(1013632K), 0.0003402 secs] [Times: user=0.00 sys=0.00, real=0.00 secs] 
+1.003: [CMS-concurrent-mark-start]
+1.005: [CMS-concurrent-mark: 0.002/0.002 secs] [Times: user=0.00 sys=0.00, real=0.00 secs] 
+1.005: [CMS-concurrent-preclean-start]
+1.007: [CMS-concurrent-preclean: 0.001/0.001 secs] [Times: user=0.00 sys=0.00, real=0.00 secs] 
+1.007: [CMS-concurrent-abortable-preclean-start]
+1.048: [GC (Allocation Failure) 1.048: [ParNew: 314558K->34942K(314560K), 0.0204230 secs] 774094K->572404K(1013632K), 0.0204875 secs] [Times: user=0.09 sys=0.00, real=0.02 secs] 
 ```
 
-0.198发生了第一次GC，这时新生代内存从261M降到了43M，堆内存从261M降到了78M，也就是有35M对象提升到了老年代，实际使用时间0.01s。
+0.198发生了第一次GC，这时新生代内存从279M降到了34M，堆内存从279M降到了89M，也就是有55M对象提升到了老年代，实际使用时间0.03s。
 
-然后后面一直执行了12次GC后，到0.749s时，发生了一次fullGC，这时新生代内存为41M降低到了0M，然后老年代从624M降低到331M，整个堆内存，从666M降低到了331M，也就是说，此时新生代对象基本都被回收了，然后堆内存中只剩下了老年代中的对象，用时70ms。
-
-
+然后后面一直执行了4次GC后，到0.535s时，开始了CMS GC，这时进行了第一次标记（CMS Initial Mark），标记所有的根对象，包括根对象直接引用的对象，以及被年轻代中所有存活对象所引用的对象，这时会发生CMS GC中的第一次STW停顿。然后开始并发标记，并发预清理，可取消的并发预清理，这几个阶段的工作都是不会对业务进行暂停的，是并行处理的，同时我们可以看到因为在并行的过程中，业务还是继续进行的，这时对象还在不断发生变化，可以看到里面不断执行minor gc，也就是我们的不断有新的对象晋升到老年代。然后执行最终标记，这时发生第二次STW停顿，用来处理各种复杂情况。前面5个阶段完成后，老年代的所有的存活对象已经完成。就进入并发清除阶段，清理对象回收可用空间，清理完后重置GC内部的数据，至此CMS GC就完成。
 
 
 
 
 
+## G1 GC
 
+>  java -Xmx1g -Xms1g -XX:+UseG1GC -Xloggc:gc.g1.1g.log -XX:+PrintGC GCLogAnalysis
+>
+>  文件地址： \project\src\main\java\top\zsmile\jvm\gc\gc.g1.1g.log
+
+```shell
+Java HotSpot(TM) 64-Bit Server VM (25.201-b09) for windows-amd64 JRE (1.8.0_201-b09), built on Dec 15 2018 18:36:39 by "java_re" with MS VC++ 10.0 (VS2010)
+Memory: 4k page, physical 8181624k(3498588k free), swap 14735224k(8071124k free)
+CommandLine flags: -XX:InitialHeapSize=1073741824 -XX:MaxHeapSize=1073741824 -XX:+PrintGC -XX:+PrintGCTimeStamps -XX:+UseCompressedClassPointers -XX:+UseCompressedOops -XX:+UseG1GC -XX:-UseLargePagesIndividualAllocation 
+0.308: [GC pause (G1 Evacuation Pause) (young) 66M->24M(1024M), 0.0075016 secs]
+0.334: [GC pause (G1 Evacuation Pause) (young) 81M->41M(1024M), 0.0080971 secs]
+0.358: [GC pause (G1 Evacuation Pause) (young) 97M->58M(1024M), 0.0074245 secs]
+0.399: [GC pause (G1 Evacuation Pause) (young) 143M->92M(1024M), 0.0102365 secs]
+0.994: [GC pause (G1 Evacuation Pause) (young)-- 860M->572M(1024M), 0.0325679 secs]
+1.027: [GC pause (G1 Humongous Allocation) (young) (initial-mark) 574M->572M(1024M), 0.0132508 secs]
+1.041: [GC concurrent-root-region-scan-start]
+1.041: [GC concurrent-root-region-scan-end, 0.0002050 secs]
+1.041: [GC concurrent-mark-start]
+1.044: [GC concurrent-mark-end, 0.0033554 secs]
+1.045: [GC remark, 0.0037218 secs]
+1.049: [GC cleanup 589M->588M(1024M), 0.0034279 secs]
+1.052: [GC concurrent-cleanup-start]
+1.052: [GC concurrent-cleanup-end, 0.0000115 secs]
+1.110: [GC pause (G1 Evacuation Pause) (young) 788M->626M(1024M), 0.0130161 secs]
+1.133: [GC pause (G1 Evacuation Pause) (mixed) 660M->531M(1024M), 0.0094161 secs]
+1.160: [GC pause (G1 Evacuation Pause) (mixed) 593M->461M(1024M), 0.0099327 secs]
+1.185: [GC pause (G1 Evacuation Pause) (mixed) 518M->399M(1024M), 0.0105938 secs]
+1.210: [GC pause (G1 Evacuation Pause) (mixed) 450M->386M(1024M), 0.0078515 secs]
+
+```
+
+这里输出跟前面的不太一样，并没有分代，意味着g1 gc 并不是一个分代算法，而是将堆分为多个可以存放内存的小块堆区域。
+
+我们再看一下整个GC日志。
+
+在0.308s时，执行了一次young  GC，堆内存从66M降到了24M，用时7ms。然后接着往下看，到了1.027s时，发生了一次G1 GC，这是因为在0.944s发生的GC后，堆内存超出了总内存的45%，而G1 GC在没有配置**InitiatingHeapOccupancyPercent**时，默认是45%。所以发生了FULL GC。
+
+因为G1 GC是从CMS GC优化而来的，所以会有相似的地方，首先是初始化标记，这时发生了第一次STW暂停，执行了0.01s；然后发生了并发Root区扫描和并发标记，这时都不会停止业务线程，而是并发的去执行操作，在不设置的情况下，清理线程默认是系统线程数的1/4；然后是再次标记，这时发生第2次GC，会标记将并发标记阶段未标记的存活对象，和执行一些额外的清理工作；标记完了，开始清理，，这时堆内存从589M变成了588M，因为有一部分工作是可以并发清理的（比如空堆区回收，存活率计算等），所以可以看到一次并发清理。到这里G1 GC 已经差不多了，现在就是要执行混合收集了，但我们看到穿插了一次young GC，应该是对象增长过快导致的。然后就是多次的混合收集，这里不仅会清理年轻代对象，也会将一部分老年代对象添加到回收集。
+
+
+
+# 作业2
+
+> java -Xmx512M -Xms512M -jar gateway-server-0.0.1-SNAPSHOT.jar
+>
+> sb -u http://localhost:8088/api/hello -c 20 -n 60
+
+这里我们使用superbenchmaster（简称SB），这里我们设置了同时并发请求20次，请求60s。
+
+![image-20210704111539414](02.jpg)
+
+![image-20210704111758807](E:\ZHQ\project\0626\geek-study\job\week02\02-1.jpg)
+
+这里看到我们的的RPS是2277.5，最大请求时长为943ms，平均时常为0.4ms，总请求139181次。
+
+
+
+# 作业3
+
+> java -Xmx512M -Xms512M -jar gateway-server-0.0.1-SNAPSHOT.jar
+>
+> sb -u http://localhost:8081/api/hello -c 20 -n 60
+
+
+
+![image-20210704114357309](03.png)
+
+
+
+这里可以看到RPS为4859，但是最大请求时间是4859，请求数为2997016，不过这里的都是404，因为没有访问到具体的服务，再试一下正常接口的压力测试。
+
+> ./sb -u http://localhost:8081/basis/test/login -c 20 -N 60
+
+![image-20210704115153729](03-1.png)
+
+这里看以看出rps433 ，平均耗时13.6，基本还是可以接受的。请求到后面时长耗时越长。
+
+
+
+# 作业4
+
+## 串行GC
+
+串行GC对年轻代使用mark-copy ，对老年代执行 mark-sweep-compact.。都是执行单线程的垃圾回收，不能并行处理，都会导致STW，这个算法不能充分利用多核CPU，只适合单核CPU处理，现在服务器都是多核的，会浪费系统资源
+
+
+
+## 并行GC
+
+并行GC对年轻代使用mark-copy，对老年代使用mark-sweep-compact。在执行GC的时候，都会导致STW，业务暂停，而跟串行不同的是会调用多核CPU资源一起进行回收处理。主要是为了提升吞吐量，减少回收时间
+
+
+
+## CMS GC
+
+CMS GC 对年轻代使用mark-copy，对老年代使用mark-sweep，在执行minor gc的时候会导致STW，执型major gc的时候会分几个阶段，将原先全阶段的stw变成了部分并行，部分暂停。cms主要目的是降低GC停顿导致的延迟，通过减少每次gc暂停的时间，来改善用户体验。
+
+
+
+## G1 GC
+
+G1 GC 没有使用分代算法，而是将堆内存分为多个小块堆区域。主要目标是为了将STW的停顿和分布变成可预期和配置的，同时通过使用增量的每次只处理一部分的内存块，回收集形式实现优先处理垃圾，然后对于年轻代的堆区域会进行拷贝，在拷贝过程中会STW停顿。因为G1很多概念都是基于CMS的，major gc也是分阶段的，其中标记和清理都是会导致STW，但是也有一部分能并发执行。大对象无法放入小的块区域，大小不足，程序将抛出异常OOM。
+
+
+
+
+
+# 作业5
+
+课上BIO的例子会一直阻塞线程，等待新连接上线。然后nio是交给了bossGroup的线程进行新连接处理，而workGroup的线程可以处理不同连接的读写请求。都是单独的一个Reactor。
 
 
 

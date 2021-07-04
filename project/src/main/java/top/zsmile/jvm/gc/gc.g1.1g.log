@@ -1,0 +1,22 @@
+Java HotSpot(TM) 64-Bit Server VM (25.201-b09) for windows-amd64 JRE (1.8.0_201-b09), built on Dec 15 2018 18:36:39 by "java_re" with MS VC++ 10.0 (VS2010)
+Memory: 4k page, physical 8181624k(3498588k free), swap 14735224k(8071124k free)
+CommandLine flags: -XX:InitialHeapSize=1073741824 -XX:MaxHeapSize=1073741824 -XX:+PrintGC -XX:+PrintGCTimeStamps -XX:+UseCompressedClassPointers -XX:+UseCompressedOops -XX:+UseG1GC -XX:-UseLargePagesIndividualAllocation 
+0.308: [GC pause (G1 Evacuation Pause) (young) 66M->24M(1024M), 0.0075016 secs]
+0.334: [GC pause (G1 Evacuation Pause) (young) 81M->41M(1024M), 0.0080971 secs]
+0.358: [GC pause (G1 Evacuation Pause) (young) 97M->58M(1024M), 0.0074245 secs]
+0.399: [GC pause (G1 Evacuation Pause) (young) 143M->92M(1024M), 0.0102365 secs]
+0.994: [GC pause (G1 Evacuation Pause) (young)-- 860M->572M(1024M), 0.0325679 secs]
+1.027: [GC pause (G1 Humongous Allocation) (young) (initial-mark) 574M->572M(1024M), 0.0132508 secs]
+1.041: [GC concurrent-root-region-scan-start]
+1.041: [GC concurrent-root-region-scan-end, 0.0002050 secs]
+1.041: [GC concurrent-mark-start]
+1.044: [GC concurrent-mark-end, 0.0033554 secs]
+1.045: [GC remark, 0.0037218 secs]
+1.049: [GC cleanup 589M->588M(1024M), 0.0034279 secs]
+1.052: [GC concurrent-cleanup-start]
+1.052: [GC concurrent-cleanup-end, 0.0000115 secs]
+1.110: [GC pause (G1 Evacuation Pause) (young) 788M->626M(1024M), 0.0130161 secs]
+1.133: [GC pause (G1 Evacuation Pause) (mixed) 660M->531M(1024M), 0.0094161 secs]
+1.160: [GC pause (G1 Evacuation Pause) (mixed) 593M->461M(1024M), 0.0099327 secs]
+1.185: [GC pause (G1 Evacuation Pause) (mixed) 518M->399M(1024M), 0.0105938 secs]
+1.210: [GC pause (G1 Evacuation Pause) (mixed) 450M->386M(1024M), 0.0078515 secs]
