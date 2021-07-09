@@ -20,15 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4b8aa987-ea7a-4485-a9cf-636592c6492d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_squareup_okhttp3_okhttp_3_14_9.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_squareup_okio_okio_1_17_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_all_4_1_53_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/top/zsmile/nio/HttpServer03.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/week02/main.md" beforeDir="false" afterPath="$PROJECT_DIR$/job/week02/main.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/project/project.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/week01/main.md" beforeDir="false" afterPath="$PROJECT_DIR$/job/week01/main.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/top/zsmile/nio/HttpReqTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/top/zsmile/nio/HttpReqTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,12 +54,14 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/project/src/main/java" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="top.zsmile.nio.netty" />
       <recent name="top.zsmile.netty" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
@@ -169,6 +166,8 @@
       <workItem from="1624848362277" duration="496000" />
       <workItem from="1624849104436" duration="10289000" />
       <workItem from="1625287147916" duration="5126000" />
+      <workItem from="1625454388460" duration="146000" />
+      <workItem from="1625824764262" duration="909000" />
     </task>
     <servers />
   </component>
@@ -240,6 +239,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1625036690985" />
+    <state x="440" y="94" key="SettingsEditor" timestamp="1625454515024">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1625454515024" />
     <state width="968" height="528" key="XDebugger.FullValuePopup" timestamp="1624942528108">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -248,10 +251,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="335" y="129" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1624848394441" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1625301293980">
+    <state x="616" y="240" key="run.anything.popup" timestamp="1625825610412">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1625301293980" />
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1625825610412" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1625825505900">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1625825505900" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
