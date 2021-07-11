@@ -1,4 +1,4 @@
-package top.zsmile.nio.netty;
+package top.zsmile.nio.netty.server;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.buffer.PooledByteBufAllocator;
@@ -12,10 +12,9 @@ import io.netty.handler.logging.LogLevel;
 import io.netty.handler.logging.LoggingHandler;
 
 public class NettyHttpServer {
-    private final static int port = 8088;
-
-    public static void main(String[] args) {
-        EventLoopGroup bossGroup = new NioEventLoopGroup(2);
+    //    public static void main(String[] args) {
+    public static void start(int port) {
+        EventLoopGroup bossGroup = new NioEventLoopGroup(1);
         EventLoopGroup workGroup = new NioEventLoopGroup(8);
 
         try {

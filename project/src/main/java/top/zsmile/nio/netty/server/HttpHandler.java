@@ -1,19 +1,17 @@
-package top.zsmile.nio.netty;
+package top.zsmile.nio.netty.server;
 
 import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelFutureListener;
 import io.netty.channel.ChannelHandlerContext;
+import io.netty.channel.ChannelInboundHandler;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 import io.netty.handler.codec.http.*;
 import io.netty.util.ReferenceCountUtil;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
 
 import static io.netty.handler.codec.http.HttpHeaderNames.CONNECTION;
 import static io.netty.handler.codec.http.HttpHeaderValues.KEEP_ALIVE;
 
-public class HttpHandler02 extends ChannelInboundHandlerAdapter {
+public class HttpHandler extends ChannelInboundHandlerAdapter {
     @Override
     public void channelReadComplete(ChannelHandlerContext ctx) throws Exception {
         ctx.flush();
@@ -39,12 +37,8 @@ public class HttpHandler02 extends ChannelInboundHandlerAdapter {
     private void helloText(FullHttpRequest fullHttpRequest, ChannelHandlerContext channelHandlerContext, String text) {
         FullHttpResponse response = null;
         try {
-            OkHttpClient okHttpClient = new OkHttpClient();
-            Request request = new Request.Builder().url("http://www.baidu.com").get().build();
-            Response execute = okHttpClient.newCall(request).execute();
-            System.out.println("响应内容为：" + execute.body().string());
-            response = new DefaultFullHttpResponse(HttpVersion.HTTP_1_1, HttpResponseStatus.OK, Unpooled.wrappedBuffer(execute.body().string().getBytes()));
-            response.headers().set(HttpHeaderNames.CONTENT_TYPE, execute.header(HttpHeaderNames.CONTENT_TYPE.toString()));
+            response = new DefaultFullHttpResponse(HttpVersion.HTTP_1_1, HttpResponseStatus.OK, Unpooled.wrappedBuffer(text.getBytes()));
+            response.headers().set(HttpHeaderNames.CONTENT_TYPE, HttpHeaderValues.APPLICATION_JSON);
             response.headers().setInt(HttpHeaderNames.CONTENT_LENGTH, response.content().readableBytes());
         } catch (Exception exception) {
             System.out.println("处理异常：" + exception.getMessage());
