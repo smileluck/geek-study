@@ -206,7 +206,7 @@ Heap
 
 ## 并行GC
 
->  java -Xmx1g -Xms1g -XX:+UseParallelGC -Xloggc:gc.serial.1g.log -XX:+PrintGCDetails  GCLogAnalysis
+>  java -Xmx1g -Xms1g -XX:+UseParallelGC -Xloggc:gc.parallel.1g.log -XX:+PrintGCDetails  GCLogAnalysis
 >
 > 文件地址： \project\src\main\java\top\zsmile\jvm\gc\gc.parallel.1g.log
 

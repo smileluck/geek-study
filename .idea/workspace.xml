@@ -20,10 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4b8aa987-ea7a-4485-a9cf-636592c6492d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/week01/main.md" beforeDir="false" afterPath="$PROJECT_DIR$/job/week01/main.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/top/zsmile/nio/HttpReqTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/top/zsmile/nio/HttpReqTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/week02/main.md" beforeDir="false" afterPath="$PROJECT_DIR$/job/week02/main.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +66,20 @@
       <recent name="D:\project\B.Smile\geek-study1\project\src\main\java" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.HttpReqTest">
+  <component name="RunManager" selected="Application.HomeWork02">
+    <configuration name="HomeWork02" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="top.zsmile.conc.HomeWork02" />
+      <module name="project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="top.zsmile.conc.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="HttpReqTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="top.zsmile.nio.HttpReqTest" />
       <module name="project" />
@@ -123,33 +134,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="JvmAppClassLoaderAddUrl" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="top.zsmile.jvm.classloader.JvmAppClassLoaderAddUrl" />
-      <module name="project" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="top.zsmile.jvm.classloader.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
       <item itemvalue="Application.HttpServer01" />
       <item itemvalue="Application.HttpServer02" />
-      <item itemvalue="Application.JvmAppClassLoaderAddUrl" />
       <item itemvalue="Application.HttpServer03" />
       <item itemvalue="Application.HttpReqTest" />
+      <item itemvalue="Application.HomeWork02" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.HomeWork02" />
         <item itemvalue="Application.HttpReqTest" />
         <item itemvalue="Application.HttpServer01" />
         <item itemvalue="Application.HttpServer03" />
         <item itemvalue="Application.HttpServer02" />
-        <item itemvalue="Application.JvmAppClassLoaderAddUrl" />
       </list>
     </recent_temporary>
   </component>
@@ -168,6 +166,8 @@
       <workItem from="1625287147916" duration="5126000" />
       <workItem from="1625454388460" duration="146000" />
       <workItem from="1625824764262" duration="909000" />
+      <workItem from="1626081368282" duration="25000" />
+      <workItem from="1626340246573" duration="8564000" />
     </task>
     <servers />
   </component>
@@ -195,10 +195,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1625288032873" />
-    <state x="285" y="229" key="#com.intellij.ide.util.MemberChooser" timestamp="1625301838299">
+    <state x="285" y="229" key="#com.intellij.ide.util.MemberChooser" timestamp="1626416721730">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="285" y="229" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1625301838299" />
+    <state x="285" y="229" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1626416721730" />
+    <state x="690" y="266" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog" timestamp="1626402538917">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="266" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1626402538917" />
     <state width="430" height="466" key="DebuggerActiveHint" timestamp="1624942731059">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -207,38 +211,38 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1624848857258" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1625306353491">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1626419085602">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1625306353491" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1625306353490">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1626419085602" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1626419085602">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1625306353490" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1625306353490">
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1626419085602" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1626419085602">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1625306353490" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1625306353490">
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1626419085602" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1626419085602">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1625306353490" />
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1625036690985">
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1626419085602" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1626417754823">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1625036690985" />
-    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1625036690985">
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1626417754823" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1626417754823">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1625036690985" />
-    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1625036690985">
+    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1626417754823" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1626417754823">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1625036690985" />
-    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1625036690985">
+    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1626417754823" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1626417754823">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1625036690985" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1626417754823" />
     <state x="440" y="94" key="SettingsEditor" timestamp="1625454515024">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
