@@ -1,0 +1,8 @@
+server:
+  port: 8080
+zsmile:
+  springboot:
+    enabled: true
+    student:
+      id: 100
+      name: "s100"

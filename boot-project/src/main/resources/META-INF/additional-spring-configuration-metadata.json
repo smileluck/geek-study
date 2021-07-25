@@ -1,0 +1,34 @@
+{
+  "groups": [
+    {
+      "name": "zsmile.springboot",
+      "type": "top.zsmile.spring.MyAutoConfiguration"
+    }
+  ],
+  "properties": [
+    {
+      "name": "zsmile.springboot.enabled",
+      "type": "java.lang.Boolean",
+      "description": "whether enable or not",
+      "defaultValue": true
+    },
+    {
+      "name": "zsmile.springboot.student",
+      "type": "top.zsmile.spring.entity.Student",
+      "sourceType": "top.zsmile.spring.prop.SpringBootPropertiseConfiguration",
+      "description": "class"
+    },
+    {
+      "name": "zsmile.springboot.student.id",
+      "type": "java.lang.Integer",
+      "sourceType": "top.zsmile.spring.entity.Klass",
+      "description": "class.id"
+    },
+    {
+      "name": "zsmile.springboot.student.name",
+      "type": "java.lang.String",
+      "sourceType": "top.zsmile.spring.entity.Klass",
+      "description": "class.name"
+    }
+  ]
+}
