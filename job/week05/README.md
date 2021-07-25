@@ -39,7 +39,7 @@
 
 
 
-[源代码地址]（https://github.com.cnpmjs.org/smileluck/geek-study/tree/main/project/src/main/java/top/zsmile/aop/）
+[源代码地址](https://github.com/smileluck/geek-study/tree/main/project/src/main/java/top/zsmile/aop)
 
 
 
@@ -136,7 +136,7 @@ public class InvokePersonHandler implements InvocationHandler {
 
 
 
-[源代码地址]（https://github.com.cnpmjs.org/smileluck/geek-study/tree/main/project/src/main/java/top/zsmile/spring/）
+[源代码地址](https://github.com/smileluck/geek-study/tree/main/project/src/main/java/top/zsmile/spring)
 
 ## 测试代码
 
@@ -232,9 +232,9 @@ public class AnnotationBean {
 
 # 作业8
 
-[源代码地址]（https://github.com.cnpmjs.org/smileluck/geek-study/tree/main/boot-project/src/main/java/top/zsmile/spring）
+[源代码地址](https://github.com/smileluck/geek-study/tree/main/boot-project/src/main/java/top/zsmile/spring)
 
-[测试地址]（https://github.com.cnpmjs.org/smileluck/geek-study/tree/main/boot-project/src/test/java/top/zsmile/spring）
+[测试地址](https://github.com/smileluck/geek-study/tree/main/boot-project/src/test/java/top/zsmile/spring)
 
 ## additional-spring-configuration-metadata
 
@@ -333,7 +333,7 @@ public class MyAutoConfiguration {
 
 ## jdbc（不带事务）
 
-[源代码地址]（https://github.com.cnpmjs.org/smileluck/geek-study/tree/main/project/src/main/java/top/zsmile/sql/jdbc/JdbcTest）
+[源代码地址](https://github.com/smileluck/geek-study/tree/main/project/src/main/java/top/zsmile/sql/jdbc/JdbcTest.java)
 
 ```java
 public class JdbcTest {
@@ -467,7 +467,7 @@ public class JdbcTest {
 
 ## jdbc （带事务）
 
-[源代码地址]（https://github.com.cnpmjs.org/smileluck/geek-study/tree/main/project/src/main/java/top/zsmile/sql/jdbc/JdbcTest2）
+[源代码地址](https://github.com/smileluck/geek-study/tree/main/project/src/main/java/top/zsmile/sql/jdbc/JdbcTest2.java)
 
 ```java
 package top.zsmile.sql.jdbc;
@@ -743,7 +743,7 @@ public class JdbcTest2 {
 
 ## hikari
 
-[源代码地址]（https://github.com.cnpmjs.org/smileluck/geek-study/tree/main/project/src/main/java/top/zsmile/sql/hikari/HikariTest）
+[源代码地址](https://github.com/smileluck/geek-study/tree/main/project/src/main/java/top/zsmile/sql/hikari/HikariTest.java)
 
 ```java
 package top.zsmile.sql.hikari;
