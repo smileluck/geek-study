@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50732
 File Encoding         : 65001
 
-Date: 2021-07-30 16:10:02
+Date: 2021-08-05 17:14:44
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -73,6 +73,26 @@ CREATE TABLE `tb_order` (
 -- Records of tb_order
 -- ----------------------------
 INSERT INTO `tb_order` VALUES ('1', '1', '1', '200.00', '150.00', '1', '2021-07-30 16:09:36', null);
+
+-- ----------------------------
+-- Table structure for tb_order_good
+-- ----------------------------
+DROP TABLE IF EXISTS `tb_order_good`;
+CREATE TABLE `tb_order_good` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'ID',
+  `order_id` bigint(20) NOT NULL COMMENT '订单id',
+  `good_type_id` bigint(20) NOT NULL COMMENT '商品种类id',
+  `name` varchar(255) NOT NULL COMMENT '名称',
+  `price` decimal(10,2) NOT NULL COMMENT '价格，单位（分）',
+  `create_time` datetime NOT NULL COMMENT '创建时间',
+  `update_time` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COMMENT='订单商品快照\r\n';
+
+-- ----------------------------
+-- Records of tb_order_good
+-- ----------------------------
+INSERT INTO `tb_order_good` VALUES ('1', '0', '2', '荔枝', '150.00', '2021-07-30 16:09:04', '2021-07-30 16:09:42');
 
 -- ----------------------------
 -- Table structure for tb_user

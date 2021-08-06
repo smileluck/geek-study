@@ -20,40 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4b8aa987-ea7a-4485-a9cf-636592c6492d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/project/.idea/libraries/Maven__cglib_cglib_3_3_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/.idea/libraries/Maven__com_google_protobuf_protobuf_java_3_11_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/.idea/libraries/Maven__com_zaxxer_HikariCP_3_4_5.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/.idea/libraries/Maven__commons_logging_commons_logging_1_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/.idea/libraries/Maven__junit_junit_4_12.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/.idea/libraries/Maven__mysql_mysql_connector_java_8_0_25.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_8_9.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/.idea/libraries/Maven__org_ow2_asm_asm_7_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/.idea/libraries/Maven__org_projectlombok_lombok_1_18_20.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_25.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/.idea/libraries/Maven__org_springframework_spring_aop_4_3_29_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/.idea/libraries/Maven__org_springframework_spring_aspects_4_3_29_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/.idea/libraries/Maven__org_springframework_spring_beans_4_3_29_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/.idea/libraries/Maven__org_springframework_spring_context_4_3_29_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/.idea/libraries/Maven__org_springframework_spring_context_support_4_3_29_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/.idea/libraries/Maven__org_springframework_spring_core_4_3_29_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/.idea/libraries/Maven__org_springframework_spring_expression_4_3_29_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/.idea/libraries/Maven__org_springframework_spring_jdbc_4_3_29_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/.idea/libraries/Maven__org_springframework_spring_jms_4_3_29_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/.idea/libraries/Maven__org_springframework_spring_messaging_4_3_29_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/.idea/libraries/Maven__org_springframework_spring_orm_4_3_29_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/.idea/libraries/Maven__org_springframework_spring_test_4_3_29_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/.idea/libraries/Maven__org_springframework_spring_tx_4_3_29_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/top/zsmile/aop/PersonMan.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/top/zsmile/aop/ProxyTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_squareup_okhttp3_okhttp_3_14_9.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_squareup_okio_okio_1_17_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_all_4_1_53_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/project/project.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/week06/geek_shop.sql" beforeDir="false" afterPath="$PROJECT_DIR$/job/week06/geek_shop.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/week06/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/job/week06/readme.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -183,18 +151,6 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
-  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -213,24 +169,24 @@
       <workItem from="1626081368282" duration="25000" />
       <workItem from="1626340246573" duration="8564000" />
       <workItem from="1627204622969" duration="219000" />
+      <workItem from="1628157005508" duration="137000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="440" y="94" key="#Project_Structure" timestamp="1624848397577">
