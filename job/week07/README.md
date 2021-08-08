@@ -26,7 +26,7 @@
 
 # 第二题
 
-## jdbc preparedStatement
+## jdbc.preparedStatement
 
 [测试地址](https://github.com/smileluck/geek-study/tree/main/project/src/main/java/top/zsmile/sql/mock/InsertDataMock.java)
 
