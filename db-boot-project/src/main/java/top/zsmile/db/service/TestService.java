@@ -5,9 +5,8 @@ import top.zsmile.db.entity.TTest;
 
 import java.util.List;
 
-@Service
 public interface TestService {
-    public List<TTest> selectList();
+     List<TTest> selectList();
 
-    public void insertNewId(long id);
+     int insertNewId(long id);
 }

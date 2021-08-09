@@ -22,18 +22,18 @@ public class SlaveDataSourceConfig {
     public DataSource getDb1DataSource() {
         return DataSourceBuilder.create().build();
     }
-
-    @Bean("slaveSqlSessionFactory")
-    public SqlSessionFactory db1SqlSessionFactory(@Qualifier("slaveDataSource") DataSource dataSource) throws Exception {
-        SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
-        bean.setDataSource(dataSource);
-        // mapper的xml形式文件位置必须要配置，不然将报错：no statement （这种错误也可能是mapper的xml中，namespace与项目的路径不一致导致）
-        bean.setMapperLocations(new PathMatchingResourcePatternResolver().getResources("classpath*:mapping/slave/*.xml"));
-        return bean.getObject();
-    }
-
-    @Bean("slaveSqlSessionTemplate")
-    public SqlSessionTemplate db1SqlSessionTemplate(@Qualifier("slaveSqlSessionFactory") SqlSessionFactory sqlSessionFactory) {
-        return new SqlSessionTemplate(sqlSessionFactory);
-    }
+//
+//    @Bean("slaveSqlSessionFactory")
+//    public SqlSessionFactory db1SqlSessionFactory(@Qualifier("slaveDataSource") DataSource dataSource) throws Exception {
+//        SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
+//        bean.setDataSource(dataSource);
+//        // mapper的xml形式文件位置必须要配置，不然将报错：no statement （这种错误也可能是mapper的xml中，namespace与项目的路径不一致导致）
+//        bean.setMapperLocations(new PathMatchingResourcePatternResolver().getResources("classpath*:mapping/slave/*.xml"));
+//        return bean.getObject();
+//    }
+//
+//    @Bean("slaveSqlSessionTemplate")
+//    public SqlSessionTemplate db1SqlSessionTemplate(@Qualifier("slaveSqlSessionFactory") SqlSessionFactory sqlSessionFactory) {
+//        return new SqlSessionTemplate(sqlSessionFactory);
+//    }
 }

@@ -5,12 +5,23 @@ import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
+import org.aspectj.lang.reflect.MethodSignature;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import top.zsmile.db.datasource.annotation.ReadOnly;
+import com.air.basis.datasource.config.DynamicContextHolder;
+import top.zsmile.db.datasource.config.DynamicManage;
+
+import javax.sql.DataSource;
+import java.lang.reflect.Method;
 
 @Aspect
 @Component
 @Slf4j
 public class ReadOnlyAspect {
+
+    @Autowired
+    private DynamicManage dynamicManage;
 
     @Pointcut("@annotation(top.zsmile.db.datasource.annotation.ReadOnly)")
     public void dataSourcePointCut() {
@@ -19,8 +30,22 @@ public class ReadOnlyAspect {
 
     @Around("dataSourcePointCut()")
     public Object around(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
-        Object args[] = proceedingJoinPoint.getArgs();
-        System.out.println(args);
-        return proceedingJoinPoint.proceed();
+
+        MethodSignature signature = (MethodSignature) proceedingJoinPoint.getSignature();
+        Method method = signature.getMethod();
+
+        ReadOnly ds = method.getAnnotation(ReadOnly.class);
+        if (ds == null) {
+            DynamicContextHolder.push("master");
+        } else {
+            DynamicContextHolder.push(dynamicManage.getSlaveDataSource());
+        }
+
+        try {
+            return proceedingJoinPoint.proceed();
+        } finally {
+            DynamicContextHolder.poll();
+        }
+
     }
 }

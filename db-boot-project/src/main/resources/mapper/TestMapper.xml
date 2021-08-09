@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="top.zsmile.db.dao.TestDao">
+<mapper namespace="top.zsmile.db.mapper.TestDao">
 
-    <select id="selectList">
-        select * from t_test;
+    <select id="selectList" resultType="top.zsmile.db.entity.TTest">
+        select * from tb_test;
     </select>
 
-    <insert id="insertNewId" parameterType="top.zsmile.db.entity.TTest">
-        insert into t_test value(#{id});
+    <insert id="insertNewId" parameterType="java.lang.Long">
+        insert into tb_test(id) value(#{id});
     </insert>
 
 </mapper>
