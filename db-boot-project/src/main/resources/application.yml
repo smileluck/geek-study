@@ -4,22 +4,52 @@ server:
 spring:
   datasource:
     master:
-      jdbc-url: jdbc:mysql://localhost:3316/db?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
+      jdbc-url: jdbc:mysql://localhost:3326/db?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
       username: root
-      password: root
+      password:
       driver-class-name: com.mysql.cj.jdbc.Driver
     slave:
       jdbc-url: jdbc:mysql://localhost:3316/db?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
       username: root
-      password: roote
+      password:
       driver-class-name: com.mysql.cj.jdbc.Driver
     slave1:
       jdbc-url: jdbc:mysql://localhost:3316/db?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
       username: root
-      password: root
+      password:
       driver-class-name: com.mysql.cj.jdbc.Driver
+
+  shardingsphere:
+    dataSources:
+      names: master,slave,slave1
+      master:
+        jdbc-url: jdbc:mysql://localhost:3326/db?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
+        username: root
+        password:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+      slave:
+        jdbc-url: jdbc:mysql://localhost:3316/db?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
+        username: root
+        password:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+      slave1:
+        jdbc-url: jdbc:mysql://localhost:3316/db?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
+        username: root
+        password:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+    masterSlaveRule:
+      ds0: # 读写分离逻辑数据源名称
+        writeDataSourceName:  master
+        readDataSourceNames:
+          - slave
+          - slave1
+        loadBalancerName: ROUND_ROBIN
+
 
 
 mybatis-plus:
-  mapper-locations: classpath*:mapper/*.xml
+  mapper-locations: classpath*:/mapper/*.xml
   type-aliases-package: top.zsmile.db.entity
+  configuration:
+    jdbc-type-for-null: 'null'
+

@@ -82,12 +82,13 @@
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatisplus-spring-boot-starter</artifactId>
-            <version>${mybatisplus.spring.boot.version}</version>
+<!--            <version>${mybatisplus.spring.boot.version}</version>-->
+            <version>1.0.5</version>
         </dependency>
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus</artifactId>
-            <version>${mybatisplus.version}</version>
+            <version>3.3.2</version>
         </dependency>
         <dependency>
             <groupId>mysql</groupId>
@@ -113,6 +114,12 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.shardingsphere</groupId>
+            <artifactId>shardingsphere-jdbc-core</artifactId>
+            <version>5.0.0-alpha</version>
         </dependency>
     </dependencies>
 

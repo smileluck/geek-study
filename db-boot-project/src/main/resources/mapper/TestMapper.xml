@@ -3,11 +3,11 @@
 
 <mapper namespace="top.zsmile.db.mapper.TestDao">
 
-    <select id="selectList" resultType="top.zsmile.db.entity.TTest">
+    <select id="selectList" resultType="top.zsmile.db.entity.TbTest">
         select * from tb_test;
     </select>
 
-    <insert id="insertNewId" parameterType="java.lang.Long">
+    <insert id="insertNewId" parameterType="java.lang.Long" >
         insert into tb_test(id) value(#{id});
     </insert>
 

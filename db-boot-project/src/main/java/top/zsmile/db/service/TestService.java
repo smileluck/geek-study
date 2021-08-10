@@ -1,12 +1,13 @@
 package top.zsmile.db.service;
 
-import org.springframework.stereotype.Service;
-import top.zsmile.db.entity.TTest;
+import top.zsmile.db.datasource.annotation.ReadOnly;
+import top.zsmile.db.entity.TbTest;
 
 import java.util.List;
 
-public interface TestService {
-     List<TTest> selectList();
+public interface TestService  {
+
+     List<TbTest> selectList();
 
      int insertNewId(long id);
 }

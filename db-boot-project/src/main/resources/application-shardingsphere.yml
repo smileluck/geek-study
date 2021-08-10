@@ -1,0 +1,24 @@
+dataSources:
+  names: master,slave,slave1
+  master: !!com.zaxxer.hikari.HikariDataSource
+    jdbc-url: jdbc:mysql://localhost:3326/db?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
+    username: root
+    password:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  slave: !!com.zaxxer.hikari.HikariDataSource
+    jdbc-url: jdbc:mysql://localhost:3316/db?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
+    username: root
+    password:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  slave1: !!com.zaxxer.hikari.HikariDataSource
+    jdbc-url: jdbc:mysql://localhost:3316/db?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
+    username: root
+    password:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+master-slave-rules:
+  dataSources:
+    ds0: # 读写分离逻辑数据源名称
+      writeDataSourceName:  master
+      readDataSourceNames: slave,slave1
+      loadBalancerName: ROUND_ROBIN

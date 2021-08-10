@@ -4,19 +4,17 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.TestPropertySource;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.context.junit4.SpringRunner;
-import top.zsmile.db.entity.TTest;
+import top.zsmile.db.entity.TbTest;
 import top.zsmile.db.service.TestService;
-import top.zsmile.db.service.impl.TestServiceImpl;
 
 import java.util.List;
 
-@SpringBootTest
+@SpringBootTest()
 @RunWith(SpringRunner.class)
-//@MapperScan(basePackages = "top.zsmile.db.mapper")
 @TestPropertySource("classpath:application.yml")
 public class DatabaseTest {
 
@@ -24,10 +22,18 @@ public class DatabaseTest {
     private TestService testService;
 
     @Test
-    public void testSelect() {
-//        List<TTest> tTests = testService.selectList();
-//        System.out.println(tTests);
+    public void testSelect() throws InterruptedException {
+        List<TbTest> tbTests = testService.selectList();
+        System.out.println("查询到数据：" + tbTests);
 
-        testService.insertNewId(11);
+//        testService.
+        int i = testService.insertNewId(12);
+
+        System.out.println("master插入" + i + "条数据");
+
+        Thread.sleep(1000L);
+
+        List<TbTest> tbTests1 = testService.selectList();
+        System.out.println("查询到数据：" + tbTests1);
     }
 }

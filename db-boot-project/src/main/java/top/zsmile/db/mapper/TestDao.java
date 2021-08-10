@@ -1,15 +1,16 @@
 package top.zsmile.db.mapper;
 
-import com.baomidou.mybatisplus.mapper.BaseMapper;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
-import top.zsmile.db.entity.TTest;
+import org.apache.ibatis.annotations.Param;
+import top.zsmile.db.entity.TbTest;
 
 import java.util.List;
 
 @Mapper
-public interface TestDao extends BaseMapper<TTest> {
+public interface TestDao extends BaseMapper<TbTest> {
 
-    List<TTest> selectList();
+    List<TbTest> selectList();
 
-    int insertNewId(long id);
+    void insertNewId(@Param("id") Long id);
 }

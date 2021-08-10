@@ -35,10 +35,13 @@ public class ReadOnlyAspect {
         Method method = signature.getMethod();
 
         ReadOnly ds = method.getAnnotation(ReadOnly.class);
-        if (ds == null) {
-            DynamicContextHolder.push("master");
+        if (ds == null || ds.name().equalsIgnoreCase("")) {
+            String name = dynamicManage.getSlaveDataSource();
+            System.out.println("读取数据库：" + name);
+            DynamicContextHolder.push(name);
         } else {
-            DynamicContextHolder.push(dynamicManage.getSlaveDataSource());
+            System.out.println("读取数据库：" + ds.name());
+            DynamicContextHolder.push(ds.name());
         }
 
         try {
