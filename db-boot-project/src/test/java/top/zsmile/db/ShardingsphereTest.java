@@ -25,7 +25,6 @@ import java.util.List;
 @SpringBootTest()
 @RunWith(SpringRunner.class)
 @TestPropertySource("classpath:application.yml")
-
 public class ShardingsphereTest {
 
 
