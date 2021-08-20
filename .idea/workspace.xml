@@ -20,8 +20,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4b8aa987-ea7a-4485-a9cf-636592c6492d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/job/week06/geek_shop.sql" beforeDir="false" afterPath="$PROJECT_DIR$/job/week06/geek_shop.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/week06/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/job/week06/readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/week07/tb_order &amp; tb_order_good.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-proxy/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/db-proxy/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-proxy/src/main/java/top/zsmile/db/dao/OrderDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/db-proxy/src/main/java/top/zsmile/db/dao/OrderDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-proxy/src/main/java/top/zsmile/db/entity/OrderEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/db-proxy/src/main/java/top/zsmile/db/entity/OrderEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-proxy/src/main/java/top/zsmile/db/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/db-proxy/src/main/java/top/zsmile/db/service/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-proxy/src/main/java/top/zsmile/db/service/impl/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/db-proxy/src/main/java/top/zsmile/db/service/impl/OrderServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-proxy/src/main/resources/mapping/OrderMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/db-proxy/src/main/resources/mapping/OrderMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/week08/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/job/week08/readme.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,6 +176,7 @@
       <workItem from="1626340246573" duration="8564000" />
       <workItem from="1627204622969" duration="219000" />
       <workItem from="1628157005508" duration="137000" />
+      <workItem from="1629343347561" duration="45000" />
     </task>
     <servers />
   </component>

@@ -7,8 +7,16 @@
         select * from tb_order;
     </select>
 
-    <insert id="insertNewId" parameterType="java.lang.Long" >
-        insert into tb_test(id) value(#{id});
+    <insert id="insertOrder" parameterType="top.zsmile.db.entity.OrderEntity" >
+        insert into tb_order(id,user_id) value(#{info.id},#{info.userId});
     </insert>
+
+    <delete id="deleteOrderById" parameterType="java.lang.Long" >
+        delete from tb_order where id=#{id}
+    </delete>
+
+    <update id="updateOrder" parameterType="top.zsmile.db.entity.OrderEntity">
+        update tb_order set id=#{info.id} where user_id = #{info.userId}
+    </update>
 
 </mapper>
