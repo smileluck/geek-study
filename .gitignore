@@ -2,3 +2,8 @@
 /boot-project/target
 /db-boot-project/target
 /db-proxy/target
+/rpc-demo-project/*/target
+/rpc-demo-project/rpcfx-demo-provider/target
+/rpc-demo-project/rpcfx-demo-consumer/target
+/rpc-demo-project/rpcfx-demo-api/target
+/rpc-demo-project/rpcfx-core/target

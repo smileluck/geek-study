@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="dubbo-hmily-provider2" />
+        <module name="dubbo-hmily-consumer" />
+        <module name="dubbo-hmily-api" />
+        <module name="dubbo-hmily-provider" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="dubbo-hmily-sql" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="dubbo-hmily-api" options="-parameters" />
+      <module name="dubbo-hmily-consumer" options="-parameters" />
+      <module name="dubbo-hmily-provider" options="-parameters" />
+      <module name="dubbo-hmily-provider2" options="-parameters" />
+      <module name="dubbo-hmily-sql" options="-parameters" />
+    </option>
+  </component>
+</project>
