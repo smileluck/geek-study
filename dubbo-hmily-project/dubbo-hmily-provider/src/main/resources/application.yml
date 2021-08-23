@@ -8,7 +8,7 @@ spring:
     name: dubbo-hmily-bank1
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/geek_bank?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
+    url: jdbc:mysql://127.0.0.1:3306/geek_bank0?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
     username: root
     password: root
   jackson:
@@ -19,14 +19,14 @@ spring:
 
 mybatis-plus:
   mapper-locations: classpath*:mapper/**/*Mapper.xml
-  type-aliases-package: top.zsmile.dubbo.provider.entity
+  type-aliases-package: top.zsmile.dubbo.entity
 
 dubbo:
   scan:
     base-packages: top.zsmile.dubbo.provider
   protocol:
     name: dubbo
-    port: 12345
+    port: 12346
   registry:
     address: zookeeper://localhost:2181
   metadata-report:

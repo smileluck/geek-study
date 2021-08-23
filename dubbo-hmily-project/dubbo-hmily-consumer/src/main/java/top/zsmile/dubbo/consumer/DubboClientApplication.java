@@ -4,17 +4,15 @@ import org.apache.dubbo.config.annotation.DubboReference;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import top.zsmile.dubbo.provider.service.UserBalanceService;
 import top.zsmile.dubbo.provider.service.UserService;
 
 import java.math.BigDecimal;
 
-@SpringBootApplication
+@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
 public class DubboClientApplication {
-
-    @DubboReference(version = "1.0.0", tag = "bankA") //, url = "dubbo://127.0.0.1:12345")
-    private UserService userServiceA;
 
     @DubboReference(version = "1.0.0", tag = "bankA") //, url = "dubbo://127.0.0.1:12345")
     private UserBalanceService userBalanceServiceA;

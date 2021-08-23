@@ -1,6 +1,7 @@
 package top.zsmile.dubbo.provider.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import org.dromara.hmily.annotation.Hmily;
 import top.zsmile.dubbo.entity.UserBalanceEntity;
 
 import java.math.BigDecimal;
@@ -11,7 +12,9 @@ import java.math.BigDecimal;
  * @date 2021-08-22 22:07:54
  */
 public interface UserBalanceService extends IService<UserBalanceEntity> {
-    public void trade(BigDecimal money) throws Exception;
+
+    @Hmily
+    public boolean trade(BigDecimal money) throws Exception;
 
     public void tradeConfirm(BigDecimal money);
 

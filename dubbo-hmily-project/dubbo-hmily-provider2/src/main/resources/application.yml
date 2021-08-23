@@ -5,7 +5,7 @@ server:
 
 spring:
   application:
-    name: dubbo-hmily-bank1
+    name: dubbo-hmily-bank2
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://127.0.0.1:3306/geek_bank1?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
@@ -19,7 +19,7 @@ spring:
 
 mybatis-plus:
   mapper-locations: classpath*:mapper/**/*Mapper.xml
-  type-aliases-package: top.zsmile.dubbo.provider.entity
+  type-aliases-package: top.zsmile.dubbo.entity
 
 dubbo:
   scan:

@@ -40,6 +40,8 @@
 
 # 作业三
 
+测试代码：[项目代码地址](https://github.com/smileluck/geek-study/blob/main/rpc-demo-project/)，[Client代码地址](https://github.com/smileluck/geek-study/blob/main/rpc-demo-project/rpcfx-demo-consumer/src/main/java/io/kimmking/rpcfx/demo/consumer/RpcfxClientApplication.java)， [Server代码地址](https://github.com/smileluck/geek-study/blob/main/rpc-demo-project/rpcfx-demo-provider/src/main/java/io/kimmking/rpcfx/demo/provider/RpcfxServerApplication.java)
+
 - 尝试将服务端写死查找接口实现类变成泛型和反射；
 
 ```java
@@ -290,3 +292,198 @@ public class RpcAopMethodInterceptor implements MethodInterceptor {
 
 # 作业七
 
+作业代码： [项目代码地址](https://github.com/smileluck/geek-study/blob/main/dubbo-hmily-project/)
+
+- 数据库geek_bank0，geek_bank1
+
+  ```sql
+  /*
+  Navicat MySQL Data Transfer
+  
+  Source Server         : localhost_3306
+  Source Server Version : 50722
+  Source Host           : localhost:3306
+  Source Database       : geek_bank
+  
+  Target Server Type    : MYSQL
+  Target Server Version : 50722
+  File Encoding         : 65001
+  
+  Date: 2021-08-22 23:26:21
+  */
+  
+  SET FOREIGN_KEY_CHECKS=0;
+  
+  -- ----------------------------
+  -- Table structure for tb_user_balance
+  -- ----------------------------
+  DROP TABLE IF EXISTS `tb_user_balance`;
+  CREATE TABLE `tb_user_balance` (
+    `user_id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'ID',
+    `cash_type` varchar(10) NOT NULL COMMENT '钱种类',
+    `money` decimal(10,0) NOT NULL DEFAULT '0' COMMENT '金额w',
+    `frozen_money` decimal(10,0) NOT NULL DEFAULT '0' COMMENT '冻结金额',
+    PRIMARY KEY (`user_id`,`cash_type`)
+  ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+  
+  -- ----------------------------
+  -- Records of tb_user_balance
+  -- ----------------------------
+  INSERT INTO `tb_user_balance` VALUES ('1', 'dollar', '10', '0');
+  INSERT INTO `tb_user_balance` VALUES ('1', 'rmb', '70', '0');
+  
+  -- ----------------------------
+  -- Table structure for tb_user
+  -- ----------------------------
+  DROP TABLE IF EXISTS `tb_user`;
+  CREATE TABLE `tb_user` (
+    `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'ID',
+    `name` varchar(50) NOT NULL COMMENT '用户名称',
+    PRIMARY KEY (`id`)
+  ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+  
+  -- ----------------------------
+  -- Records of tb_user
+  -- ----------------------------
+  INSERT INTO `tb_user` VALUES ('1', 'A');
+  
+  ```
+
+- 账户A Service，通过DubboReference获取账户B Service
+
+```java
+package top.zsmile.dubbo.provider.service;
+
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
+import okhttp3.MediaType;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import org.apache.dubbo.config.annotation.DubboReference;
+import org.apache.dubbo.config.annotation.DubboService;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.dromara.hmily.annotation.HmilyTCC;
+import org.dromara.hmily.core.context.HmilyTransactionContext;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
+import top.zsmile.dubbo.provider.dao.UserBalanceDao;
+import top.zsmile.dubbo.entity.UserBalanceEntity;
+import top.zsmile.dubbo.provider.service.UserBalanceService;
+
+import java.math.BigDecimal;
+
+/**账户A
+*/
+@DubboService(version = "1.0.0", tag = "bankA", weight = 100)
+public class UserBalanceServiceImpl extends ServiceImpl<UserBalanceDao, UserBalanceEntity> implements UserBalanceService {
+
+
+    @DubboReference(version = "2.0.0", tag = "bankB") //, url = "dubbo://127.0.0.1:12345")
+    private UserBalanceService userBalanceServiceB;
+
+    private final Long userId = 1L;
+
+    @Override
+    @HmilyTCC(confirmMethod = "tradeConfirm", cancelMethod = "tradeCancel")
+    public boolean trade(BigDecimal money) throws Exception {
+
+        UserBalanceEntity dollarAccount = getOne(new QueryWrapper<UserBalanceEntity>().eq("user_id", userId).eq("cash_type", "dollar"));
+        if (dollarAccount.getMoney().intValue() >= money.intValue()) {
+            update(new UpdateWrapper<UserBalanceEntity>().eq("user_id", userId).eq("cash_type", "dollar").set("money", dollarAccount.getMoney().subtract(money)).set("frozen_money", dollarAccount.getFrozenMoney().add(money)));
+            userBalanceServiceB.trade(money);
+//            OkHttpClient client = new OkHttpClient();
+//            final Request request = new Request.Builder()
+//                    .url("http://localhost:8082/bank2/test/trade?money=" + money.intValue())
+//                    .build();
+//            String res = client.newCall(request).execute().body().string();
+//            if (null == res || res.equalsIgnoreCase("false")) {
+//                throw new Exception("trade fail");
+//            }
+            return true;
+        } else {
+            throw new Exception("no money");
+        }
+    }
+
+    @Override
+    public void tradeConfirm(BigDecimal money) {
+        System.out.println("confirm trade bankA");
+        UserBalanceEntity rmbAccount = getOne(new QueryWrapper<UserBalanceEntity>().eq("user_id", userId).eq("cash_type", "rmb"));
+        UserBalanceEntity dollarAccount = getOne(new QueryWrapper<UserBalanceEntity>().eq("user_id", userId).eq("cash_type", "dollar"));
+        update(new UpdateWrapper<UserBalanceEntity>().eq("user_id", userId).eq("cash_type", "dollar").set("frozen_money", dollarAccount.getFrozenMoney().subtract(money)));
+        update(new UpdateWrapper<UserBalanceEntity>().eq("user_id", userId).eq("cash_type", "rmb").set("money", rmbAccount.getMoney().add(money.multiply(new BigDecimal(7)))));
+    }
+
+    @Override
+    public void tradeCancel(BigDecimal money) {
+        System.out.println("cancel trade bankA");
+        UserBalanceEntity rmbAccount = getOne(new QueryWrapper<UserBalanceEntity>().eq("user_id", userId).eq("cash_type", "rmb"));
+        UserBalanceEntity dollarAccount = getOne(new QueryWrapper<UserBalanceEntity>().eq("user_id", userId).eq("cash_type", "dollar"));
+        update(new UpdateWrapper<UserBalanceEntity>().eq("user_id", userId).eq("cash_type", "dollar").set("money", dollarAccount.getMoney().add(money)).set("frozen_money", dollarAccount.getFrozenMoney().subtract(money)));
+    }
+}
+```
+
+```java
+package top.zsmile.dubbo.provider.service;
+
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.apache.dubbo.config.annotation.DubboReference;
+import org.apache.dubbo.config.annotation.DubboService;
+import org.dromara.hmily.annotation.HmilyTCC;
+import org.springframework.transaction.annotation.Transactional;
+import top.zsmile.dubbo.entity.UserBalanceEntity;
+import top.zsmile.dubbo.provider.dao.UserBalanceDao;
+import top.zsmile.dubbo.provider.service.UserBalanceService;
+
+import java.math.BigDecimal;
+
+/**账户B
+*/
+@DubboService(version = "2.0.0", tag = "bankB", weight = 100)
+public class UserBalanceServiceImpl extends ServiceImpl<UserBalanceDao, UserBalanceEntity> implements UserBalanceService {
+
+    private final Long userId = 2L;
+
+    @Override
+    @HmilyTCC(confirmMethod = "tradeConfirm", cancelMethod = "tradeCancel")
+    public boolean trade(BigDecimal money) throws Exception {
+        UserBalanceEntity rmbAccount = getOne(new QueryWrapper<UserBalanceEntity>().eq("user_id", userId).eq("cash_type", "rmb"));
+        BigDecimal rmbDollar = money.multiply(new BigDecimal(7));
+        if (rmbAccount.getMoney().intValue() >= rmbDollar.intValue()) {
+            update(new UpdateWrapper<UserBalanceEntity>().eq("user_id", userId).eq("cash_type", "rmb").set("money", rmbAccount.getMoney().subtract(rmbDollar)).set("frozen_money", rmbAccount.getFrozenMoney().add(rmbDollar)));
+            return true;
+        } else {
+//            return false;
+            throw new Exception("no money");
+        }
+    }
+
+    @Override
+    public void tradeConfirm(BigDecimal money) {
+        System.out.println("confirm trade bankB");
+        BigDecimal rmbDollar = money.multiply(new BigDecimal(7));
+        UserBalanceEntity rmbAccount = getOne(new QueryWrapper<UserBalanceEntity>().eq("user_id", userId).eq("cash_type", "rmb"));
+        UserBalanceEntity dollarAccount = getOne(new QueryWrapper<UserBalanceEntity>().eq("user_id", userId).eq("cash_type", "dollar"));
+        update(new UpdateWrapper<UserBalanceEntity>().eq("user_id", userId).eq("cash_type", "rmb").set("frozen_money", dollarAccount.getFrozenMoney().subtract(rmbDollar)));
+        update(new UpdateWrapper<UserBalanceEntity>().eq("user_id", userId).eq("cash_type", "dollar").set("money", rmbAccount.getMoney().add(money)));
+    }
+
+    @Override
+    public void tradeCancel(BigDecimal money) {
+        System.out.println("cancel trade bankB");
+        BigDecimal rmbDollar = money.multiply(new BigDecimal(7));
+        UserBalanceEntity rmbAccount = getOne(new QueryWrapper<UserBalanceEntity>().eq("user_id", userId).eq("cash_type", "rmb"));
+        UserBalanceEntity dollarAccount = getOne(new QueryWrapper<UserBalanceEntity>().eq("user_id", userId).eq("cash_type", "dollar"));
+        update(new UpdateWrapper<UserBalanceEntity>().eq("user_id", userId).eq("cash_type", "rmb").set("money", rmbAccount.getMoney().add(rmbDollar)).set("frozen_money", dollarAccount.getFrozenMoney().subtract(rmbDollar)));
+//        update(new UpdateWrapper<UserBalanceEntity>().eq("user_id", userId).eq("cash_type", "dollar").set("money", rmbAccount.getMoney().add(money)));
+    }
+}
+```
+
+
+
+因为没有加上幂等和防悬挂的等机制，容易造成多次执行转账，后面再研究，完善一下。
