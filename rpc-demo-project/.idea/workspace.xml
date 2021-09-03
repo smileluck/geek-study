@@ -2,39 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a549a9c1-ddbd-4776-90b2-e390979597b9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../dubbo-hmily-project/.idea/dubbo-hmily-project.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dubbo-hmily-project/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dubbo-hmily-project/dubbo-hmily-provider2/src/main/java/top/zsmile/dubbo/provider/service/UserBalanceServiceImpl.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../job/week07/tb_order &amp; tb_order_good.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../dubbo-hmily-project/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../dubbo-hmily-project/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dubbo-hmily-project/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../dubbo-hmily-project/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dubbo-hmily-project/dubbo-hmily-api/dubbo-hmily-api.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dubbo-hmily-project/dubbo-hmily-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../dubbo-hmily-project/dubbo-hmily-api/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dubbo-hmily-project/dubbo-hmily-api/src/main/java/top/zsmile/dubbo/provider/service/UserBalanceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../dubbo-hmily-project/dubbo-hmily-api/src/main/java/top/zsmile/dubbo/provider/service/UserBalanceService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dubbo-hmily-project/dubbo-hmily-api/target/classes/top/zsmile/dubbo/provider/service/UserBalanceService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../dubbo-hmily-project/dubbo-hmily-api/target/classes/top/zsmile/dubbo/provider/service/UserBalanceService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dubbo-hmily-project/dubbo-hmily-consumer/dubbo-hmily-consumer.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dubbo-hmily-project/dubbo-hmily-consumer/src/main/java/top/zsmile/dubbo/consumer/DubboClientApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../dubbo-hmily-project/dubbo-hmily-consumer/src/main/java/top/zsmile/dubbo/consumer/DubboClientApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dubbo-hmily-project/dubbo-hmily-consumer/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../dubbo-hmily-project/dubbo-hmily-consumer/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dubbo-hmily-project/dubbo-hmily-provider/dubbo-hmily-provider.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dubbo-hmily-project/dubbo-hmily-provider/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../dubbo-hmily-project/dubbo-hmily-provider/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dubbo-hmily-project/dubbo-hmily-provider/src/main/java/top/zsmile/dubbo/provider/DubboServerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../dubbo-hmily-project/dubbo-hmily-provider/src/main/java/top/zsmile/dubbo/provider/DubboServerApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dubbo-hmily-project/dubbo-hmily-provider/src/main/java/top/zsmile/dubbo/provider/service/impl/UserBalanceServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../dubbo-hmily-project/dubbo-hmily-provider/src/main/java/top/zsmile/dubbo/provider/service/UserBalanceServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dubbo-hmily-project/dubbo-hmily-provider/src/main/java/top/zsmile/dubbo/provider/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../dubbo-hmily-project/dubbo-hmily-provider/src/main/java/top/zsmile/dubbo/provider/service/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dubbo-hmily-project/dubbo-hmily-provider/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../dubbo-hmily-project/dubbo-hmily-provider/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dubbo-hmily-project/dubbo-hmily-provider/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../dubbo-hmily-project/dubbo-hmily-provider/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dubbo-hmily-project/dubbo-hmily-provider/target/classes/top/zsmile/dubbo/provider/DubboServerApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/../dubbo-hmily-project/dubbo-hmily-provider/target/classes/top/zsmile/dubbo/provider/DubboServerApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dubbo-hmily-project/dubbo-hmily-provider/target/classes/top/zsmile/dubbo/provider/service/impl/UserBalanceServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dubbo-hmily-project/dubbo-hmily-provider/target/classes/top/zsmile/dubbo/provider/service/impl/UserServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dubbo-hmily-project/dubbo-hmily-provider2/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../dubbo-hmily-project/dubbo-hmily-provider2/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dubbo-hmily-project/dubbo-hmily-provider2/src/main/java/provider/DubboServerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../dubbo-hmily-project/dubbo-hmily-provider2/src/main/java/top/zsmile/dubbo/provider/DubboServerApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dubbo-hmily-project/dubbo-hmily-provider2/src/main/java/provider/dao/UserBalanceDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../dubbo-hmily-project/dubbo-hmily-provider2/src/main/java/top/zsmile/dubbo/provider/dao/UserBalanceDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dubbo-hmily-project/dubbo-hmily-provider2/src/main/java/provider/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../dubbo-hmily-project/dubbo-hmily-provider2/src/main/java/top/zsmile/dubbo/provider/dao/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dubbo-hmily-project/dubbo-hmily-provider2/src/main/java/provider/service/impl/UserBalanceServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dubbo-hmily-project/dubbo-hmily-provider2/src/main/java/provider/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../dubbo-hmily-project/dubbo-hmily-provider2/src/main/java/top/zsmile/dubbo/provider/service/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dubbo-hmily-project/dubbo-hmily-provider2/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../dubbo-hmily-project/dubbo-hmily-provider2/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../job/week09/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/../job/week09/readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,6 +73,7 @@
       <workItem from="1629553161385" duration="5565000" />
       <workItem from="1629595551379" duration="10785000" />
       <workItem from="1629689709777" duration="651000" />
+      <workItem from="1630483405247" duration="180000" />
     </task>
     <servers />
   </component>

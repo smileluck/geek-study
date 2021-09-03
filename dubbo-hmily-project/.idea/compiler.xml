@@ -6,10 +6,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="dubbo-hmily-provider" />
+        <module name="dubbo-hmily-api" />
         <module name="dubbo-hmily-consumer" />
         <module name="dubbo-hmily-provider2" />
-        <module name="dubbo-hmily-api" />
+        <module name="dubbo-hmily-provider" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
