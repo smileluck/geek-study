@@ -53,7 +53,9 @@
 
 # 作业8
 
-分布式锁和减库存代码
+测试代码：[代码地址](https://github.com.cnpmjs.org/smileluck/geek-study/tree/main/redis-demo/src/main/java/top/zsmile/redis/lock)
+
+分布式锁和减库存代码：
 
 ```java
 
@@ -262,6 +264,8 @@ public class JedisDemo2 {
 ```
 
 # 作业9
+
+测试代码：[代码地址](https://github.com.cnpmjs.org/smileluck/geek-study/tree/main/redis-demo/src/main/java/top/zsmile/redis/pubsub)
 
 发布消息
 
