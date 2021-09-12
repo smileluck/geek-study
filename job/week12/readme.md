@@ -51,7 +51,7 @@
 
 我这里使用了redis-window版本自带的conf文件，并修改了两处地方。
 
-文件地址：[redis.windows6379.conf]()
+文件地址：[redis.windows6379.conf](https://github.com/smileluck/geek-study/blob/main/job/week12/redis.windows6379.conf)
 
 ```
 # 端口
@@ -61,7 +61,7 @@ port 6379
 dir ./6379/
 ```
 
-文件地址：[redis.windows6380.conf]()
+文件地址：[redis.windows6380.conf](https://github.com/smileluck/geek-study/blob/main/job/week12/redis.windows6380.conf)
 
 ```
 # 端口
@@ -188,7 +188,7 @@ get temp_version
 
 配置2个sentinel服务，分别占用26379和26380端口，redis主服务为127.0.0.1 6379，掉线检测为10s
 
-文件地址：[sentinel0.conf]()
+文件地址：[sentinel0.conf](https://github.com/smileluck/geek-study/blob/main/job/week12/sentinel0.conf)
 
 ```
 sentinel myid 8d992c54df8f8677b0b345825f61fb733c73d14c
@@ -202,7 +202,7 @@ user default on nopass sanitize-payload ~* &* +@all
 dir "E:/ZHQ/project/0626/geek-study2/geek-study/job/week12"
 ```
 
-文件地址：[sentinel1.conf]()
+文件地址：[sentinel1.conf](https://github.com/smileluck/geek-study/blob/main/job/week12/sentinel1.conf)
 
 ```
 sentinel myid 8d992c54df8f8677b0b345825f61fb733c73d14d
@@ -256,7 +256,7 @@ master0:name=mymaster,status=ok,address=127.0.0.1:6379,slaves=1,sentinels=2
 
 在之前的redis6379基础上修改以下几行代码
 
-文件地址：[cluster.windows7000.conf]()
+文件地址：[cluster.windows7000.conf](https://github.com/smileluck/geek-study/blob/main/job/week12/cluster.windows7000.conf)
 
 ```
 # 端口
@@ -278,7 +278,7 @@ cluster-require-full-coverage no
 cluster-node-timeout 15000
 ```
 
-文件地址：[cluster.windows7001.conf]()
+文件地址：[cluster.windows7001.conf](https://github.com/smileluck/geek-study/blob/main/job/week12/cluster.windows7001.conf)
 
 ```
 # 端口
@@ -300,7 +300,7 @@ cluster-require-full-coverage no
 cluster-node-timeout 15000
 ```
 
-文件地址：[cluster.windows7002.conf]()
+文件地址：[cluster.windows7002.conf](https://github.com/smileluck/geek-study/blob/main/job/week12/cluster.windows7002.conf)
 
 ```
 # 端口
@@ -490,7 +490,7 @@ redis-cli -p 7000 set hello 123
 
 ## Topic
 
-测试代码：[文件地址]()
+测试代码：[文件地址](https://github.com/smileluck/geek-study/blob/main/mq-project/src/main/java/top/zsmile/activemq/demo/ActiveTopicDemo.java)
 
 ```java
 package top.zsmile.activemq.demo;
@@ -562,7 +562,7 @@ public class ActiveTopicDemo {
 
 ## Queue
 
-测试代码：[文件地址]()
+测试代码：[文件地址](https://github.com/smileluck/geek-study/blob/main/mq-project/src/main/java/top/zsmile/activemq/demo/ActiveQueueDemo.java)
 
 ```java
 package top.zsmile.activemq.demo;
@@ -623,7 +623,7 @@ public class ActiveQueueDemo {
 
 # 作业9
 
-测试代码：[文件地址]()
+测试代码：[文件地址](https://github.com/smileluck/geek-study/tree/main/mq-project/src/main/java/top/zsmile/activemq/demo/ActiveBrokerDemo.java)
 
 ```java
 package top.zsmile.activemq.demo;
