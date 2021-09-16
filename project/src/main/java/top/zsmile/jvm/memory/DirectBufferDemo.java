@@ -1,10 +1,11 @@
 package top.zsmile.jvm.memory;
 
 import java.nio.ByteBuffer;
+import java.nio.IntBuffer;
 
 public class DirectBufferDemo {
     public static void main(String[] args) {
-        ByteBuffer demoDirectByteBuffer = ByteBuffer.allocateDirect(8);//A
+        ByteBuffer demoDirectByteBuffer = ByteBuffer.allocateDirect(8);
         printBufferProperties("write to demoDirectByteBuffer before ", demoDirectByteBuffer);
         // put to buffer 5 bytes utf-8 编码
         demoDirectByteBuffer.put("hello".getBytes());
@@ -22,14 +23,17 @@ public class DirectBufferDemo {
 //
 //        demoDirectByteBuffer.put("word".getBytes());
 
-       demoDirectByteBuffer.compact();
+        demoDirectByteBuffer.compact();
         printBufferProperties("after invoke compact ", demoDirectByteBuffer);
         demoDirectByteBuffer.position(3);
         printBufferProperties("after invoke compact ", demoDirectByteBuffer);
         demoDirectByteBuffer.mark();
-        demoDirectByteBuffer.compact();
         printBufferProperties("after invoke compact ", demoDirectByteBuffer);
 
+        demoDirectByteBuffer.position(5);
+        printBufferProperties("after invoke compact ", demoDirectByteBuffer);
+        demoDirectByteBuffer.reset();
+        printBufferProperties("after invoke compact ", demoDirectByteBuffer);
 
 
         byte[] temp = new byte[demoDirectByteBuffer.limit()];
@@ -42,8 +46,9 @@ public class DirectBufferDemo {
 
         System.out.println(new String(temp));
     }
+
     private static void printBufferProperties(String des, ByteBuffer target) {
-        System.out.println(String.format("%s--position:%d,limit:%d,capacity:%s",des,
+        System.out.println(String.format("%s--position:%d,limit:%d,capacity:%s", des,
                 target.position(), target.limit(), target.capacity()));
     }
 }
