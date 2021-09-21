@@ -30,13 +30,13 @@
 
 下载连接：https://www.apache.org/dyn/closer.cgi?path=/kafka/2.7.1/kafka_2.12-2.7.1.tgz
 
-![image-20210918145312245](D:\project\B.Smile\geek-study1\job\week13\image-20210918145312245.png)
+![image-20210918145312245](image-20210918145312245.png)
 
 
 
 ## 配置集群
 
-配置文件地址：[server9011.properties]()，[server9012.properties]()，[server9013.properties]()
+配置文件地址：[server9011.properties](https://github.com/smileluck/geek-study/blob/main/job/week13/server9011.properties)，[server9012.properties](https://github.com/smileluck/geek-study/blob/main/job/week13/server9012.properties)，[server9013.properties](https://github.com/smileluck/geek-study/blob/main/job/week13/server9013.properties)
 
 1. 在server.properties的基础上，复制3份文件，重命名为server9011.properties，server9012.properties，server9013.properties。
 2. 修改文件内容。
@@ -85,7 +85,7 @@ kafka.common.InconsistentClusterIdException: The Cluster ID Rv30bYQFSMWb6wFHgx3E
 
 ## Spring kafka
 
-测试代码：[主函数]()，[Consumer]()，[Producer]()
+测试代码：[主函数](https://github.com/smileluck/geek-study/blob/main/mq-project/src/main/java/top/zsmile/kafka/demo/KafkaApplication.java)，[Consumer](https://github.com/smileluck/geek-study/blob/main/mq-project/src/main/java/top/zsmile/kafka/demo/KafkaConsumer.java)，[Producer](https://github.com/smileluck/geek-study/blob/main/mq-project/src/main/java/top/zsmile/kafka/demo/KafkaProducer.java)
 
 ### 引入POM
 
@@ -169,9 +169,54 @@ public class ProducerTest {
 
 ## 版本二
 
-代码目录：[地址]()
+代码目录：[地址](https://github.com/smileluck/geek-study/tree/main/smile-mq/sec-edition-mq/src/main/java/top/zsmile/mq)
 
-测试代码：[文件地址]()
+测试代码：[文件地址](https://github.com/smileluck/geek-study/tree/main/smile-mq/sec-edition-mq/src/main/java/top/zsmile/mq)
+
+```java
+public class SmqDemo {
+    @SneakyThrows
+    public static void main(String[] args) {
+        SmqBroker smqBroker = new SmqBroker();
+        SmqConsumer consumer = smqBroker.createConsumer();
+
+        consumer.substribe("test1");
+        consumer.substribe("test2");
+        new Thread(new SmqConsumerRunner(consumer)).start();
+
+        SmqProducer smqProducer = smqBroker.createProducer();
+        for (int i = 1; i <= 10; i++) {
+            smqProducer.send("test1", new SmqMessage(null, "int i=>" + i));
+        }
+        Thread.sleep(500);
+        System.out.println("点击任何键，发送一条消息；点击q或e，退出程序。");
+        boolean s = true;
+        while (true) {
+            char c = (char) System.in.read();
+            if (c == 'a') {
+                smqProducer.send("test2", new SmqMessage(null, "time=>" + System.currentTimeMillis()));
+                continue;
+            }
+            if (c == 'b' && s) {
+                SmqConsumer consumer2 = smqBroker.createConsumer();
+                consumer2.substribe("test1");
+                new Thread(new SmqConsumerRunner(consumer2)).start();
+            }
+
+            if (c > 20) {
+                System.out.println(c);
+                smqProducer.send("test1", new SmqMessage(null, "char c=>" + c));
+            }
+
+
+            if (c == 'q' || c == 'e') break;
+        }
+    }
+
+}
+```
+
+
 
 ### Queue方面
 
@@ -277,9 +322,9 @@ public class SmqConsumerRunner implements Runnable {
 
 ## 版本三
 
-代码目录：[地址]()
+代码目录：[地址](https://github.com/smileluck/geek-study/tree/main/smile-mq/third-edition-mq/src/main/java/top/zsmile/mq/broker)
 
-测试代码：[MQ服务]()，[ProducerTest]()，[ConsumerTest]()
+测试代码：[MQ服务](https://github.com/smileluck/geek-study/blob/main/smile-mq/third-edition-mq/src/main/java/top/zsmile/mq/broker/BrokerApplication.java)，[ProducerTest](https://github.com/smileluck/geek-study/blob/main/smile-mq/third-edition-mq/src/test/java/top/zsmile/mq/ProducerTest.java)，[ConsumerTest](https://github.com/smileluck/geek-study/blob/main/smile-mq/third-edition-mq/src/test/java/top/zsmile/mq/ConsumerTest.java)
 
 分离服务端，并将读下标放到MQ服务端统一读，每次读后，会消费数据，但是没有将数据弹出。还是会存储在内存中。
 
