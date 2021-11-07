@@ -9,11 +9,11 @@ public class FinalStaticClass {
 
 class Price {
     /**
-     * method1: After add final, result:17.3;
+     * method1: give apple add final keyword, result:17.3;
      * method2: Swap 18 to 19, result:17.3;
      */
     static Price P = new Price(2.7);
-    static double apple = 20;
+    final static double apple = 20;
     double Price;
 
     public Price(double orange) {

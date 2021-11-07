@@ -13,24 +13,6 @@ public final class UnsafeUtils {
 
     private static final Unsafe unsafe;
 
-
-    //    static {
-//        Field field = null;
-//        Unsafe tempSafe;
-//        try {
-//            field = Unsafe.class.getDeclaredField("theUnsafe");
-//        } catch (NoSuchFieldException e) {
-//            e.printStackTrace();
-//        }
-//        field.setAccessible(true);
-//        try {
-//            tempSafe = (Unsafe) field.get(null);
-//        } catch (IllegalAccessException e) {
-//            e.printStackTrace();
-//            tempSafe = null;
-//        }
-//        unsafe = tempSafe;
-//    }
     static {
         Field field = null;
         try {
@@ -49,5 +31,4 @@ public final class UnsafeUtils {
     public static Unsafe getUnsafe() {
         return unsafe;
     }
-
 }
