@@ -9,30 +9,20 @@ import java.net.URL;
 import java.util.Scanner;
 
 public class HelloWordClassLoader extends ClassLoader {
-    public static void main(String[] args) throws IOException, ClassNotFoundException {
-        HelloWord.sayHello();
+    public static void main(String[] args) throws IOException, Exception {
+        HelloWord.sayHello(); // 输出 hello
+
         Scanner in = new Scanner(System.in);
         HelloWordClassLoader helloWordClassLoader = new HelloWordClassLoader();
-        Class<?> helloClass = helloWordClassLoader.loadClass("HelloWord2");
+        Class<?> helloClass = helloWordClassLoader.loadClass("HelloWord");
         helloWordClassLoader.resolveClass(helloClass);
-        try {
-            Object o = helloClass.newInstance();
-            Method sayHello = helloClass.getMethod("sayHello");
-            sayHello.invoke(null);
-        } catch (InstantiationException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (NoSuchMethodException e) {
-            e.printStackTrace();
-        } catch (InvocationTargetException e) {
-            e.printStackTrace();
-        }
-        ClassLoader parent = helloWordClassLoader.getParent();
+        Object o = helloClass.newInstance();
+        Method sayHello = helloClass.getMethod("sayHello");
+        sayHello.invoke(null);// 输出hello2
 
         while (!in.next().equalsIgnoreCase("exit")) {
             System.out.println(123);
-            HelloWord.sayHello();
+            HelloWord.sayHello(); //输出hello , 想替换掉AppClassloader里面HelloWord类，让他输出hello2
         }
     }
 
