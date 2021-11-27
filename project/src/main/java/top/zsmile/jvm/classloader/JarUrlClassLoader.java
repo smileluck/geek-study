@@ -17,11 +17,11 @@ import java.util.jar.Manifest;
 import java.util.zip.ZipEntry;
 
 /**
- *  @author: B.Smile
- *  @Date: 2021/11/25 17:08
- *  @Description: load jar and run main-class
+ * @author: B.Smile
+ * @Date: 2021/11/25 17:08
+ * @Description: load jar and run main-class
  */
-public class JarRunMainClass extends ClassLoader {
+public class JarUrlClassLoader {
 
 
     public void getJarFileByClassLoader(String filePath) {
@@ -43,8 +43,7 @@ public class JarRunMainClass extends ClassLoader {
     }
 
 
-    public static void main(String[] args) throws IOException {
-
-//        new XJarClassLoader().getJarFile("file:/E:\\ZHQ\\project\\0626\\geek-study2\\geek-study\\project\\src\\main\\java\\top\\zsmile\\jvm\\classloader\\Hello.xar");
+    public static void main(String[] args) {
+        new JarUrlClassLoader().getJarFileByClassLoader("file:/E:\\ZHQ\\project\\0626\\geek-study2\\geek-study\\project\\src\\main\\java\\top\\zsmile\\jvm\\classloader\\Hello.jar");
     }
 }

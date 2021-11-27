@@ -80,6 +80,61 @@ public class XClassLoader extends ClassLoader {
 
 
 
+## 第二题
+
+```java
+public class XJarClassLoader extends URLClassLoader {
+    public XJarClassLoader(URL[] urls) {
+        super(urls);
+    }
+
+    @Override
+    protected Class<?> findClass(String name) throws ClassNotFoundException {
+        final String suffix = ".xlass";
+        InputStream resourceAsStream = this.getResourceAsStream(name + suffix);
+
+        try {
+            int available = resourceAsStream.available();
+            byte[] bytes = new byte[available];
+            resourceAsStream.read(bytes);
+
+            byte[] decode = decode(bytes);
+            return defineClass(name, decode, 0, decode.length);
+        } catch (IOException e) {
+            e.printStackTrace();
+            throw new ClassNotFoundException();
+        } finally {
+            if (resourceAsStream != null) {
+                try {
+                    resourceAsStream.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+    public byte[] decode(byte[] code) {
+        byte[] decodeBytes = new byte[code.length];
+        for (int i = 0; i < code.length; i++) {
+            decodeBytes[i] = (byte) (255 - code[i]);
+        }
+        return decodeBytes;
+    }
+
+    public static void main(String[] args) throws Exception {
+        URL url = new URL("file:/D:\\project\\B.Smile\\geek-study1\\project\\src\\main\\java\\top\\zsmile\\jvm\\classloader\\Hello.xar");
+        XJarClassLoader urlClassLoader = new XJarClassLoader(new URL[]{url});
+        Class<?> hello = urlClassLoader.findClass("Hello");
+        Object o = hello.newInstance();
+        Method sayHello = hello.getMethod("hello");
+        sayHello.invoke(o);
+    }
+}
+```
+
+
+
 ### 2. NIO
 
 实现一个http 文件服务器和一个ftp文件服务器。
