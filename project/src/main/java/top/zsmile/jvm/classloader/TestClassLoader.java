@@ -1,5 +1,6 @@
 package top.zsmile.jvm.classloader;
 
+import java.io.File;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.net.URL;
@@ -13,8 +14,13 @@ import java.net.URLClassLoader;
 public class TestClassLoader {
 
     public static void main(String[] args) {
-        TestClassLoader testClassLoader = new TestClassLoader();
-        testClassLoader.isolate();
+//        TestClassLoader testClassLoader = new TestClassLoader();
+//        testClassLoader.isolate();
+
+
+        File file = new File("D:\\project\\B.Smile\\geek-study1\\project\\src\\main\\java\\top\\zsmile\\jvm\\classloader");
+        File parent = file.getParentFile();
+        System.out.println(parent.getPath());
     }
 
     /**
