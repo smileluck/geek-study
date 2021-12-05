@@ -8,9 +8,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.net.JarURLConnection;
 import java.net.URL;
-import java.util.Enumeration;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.jar.Attributes;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
@@ -18,6 +16,8 @@ import java.util.jar.Manifest;
 import java.util.zip.ZipEntry;
 
 public class JarLoader extends ClassLoader {
+
+    List<Class<?>> classCache = new ArrayList<>();
 
     /**
      * @param jarPath params form => jar:file:/${path}!/
@@ -40,21 +40,27 @@ public class JarLoader extends ClassLoader {
                     int available = inputStream.available();
                     byte[] bytes = new byte[available];
                     inputStream.read(bytes);
-                    Class<?> aClass = defineClass("top.zsmile.jvm.classloader.Hello", bytes, 0, bytes.length);
+                    String replace = jarEntry.getName().replaceAll("/", ".");
+                    replace = replace.substring(0, replace.lastIndexOf(".class"));
+
+                    Class<?> aClass = defineClass(replace, bytes, 0, bytes.length);
 //                    resolveClass(aClass);
-                    Method method = null;
-                    try {
-                        method = aClass.getMethod("main", String[].class);
-                        method.invoke(null, (Object) null);
-                    } catch (NoSuchMethodException e) {
-                        e.printStackTrace();
-                    } catch (IllegalAccessException e) {
-                        e.printStackTrace();
-                    } catch (InvocationTargetException e) {
-                        e.printStackTrace();
-                    }
+                    classCache.add(aClass);
+//                    Method method = null;
+//                    try {
+//                        method = aClass.getMethod("main", String[].class);
+//                        method.invoke(null, (Object) null);
+//                    } catch (NoSuchMethodException e) {
+//                        e.printStackTrace();
+//                    } catch (IllegalAccessException e) {
+//                        e.printStackTrace();
+//                    } catch (InvocationTargetException e) {
+//                        e.printStackTrace();
+//                    }
                 }
             }
+
+//            jarFile.close();
 
         }
     }
@@ -87,8 +93,40 @@ public class JarLoader extends ClassLoader {
         }
     }
 
+    public void foreach() {
+        System.out.println("jarLoader forEach");
+        classCache.stream().forEach(item -> {
+            Method method = null;
+            try {
+                System.out.println("item == >");
+                method = item.getMethod("main", String[].class);
+                method.invoke(null, (Object) null);
+
+
+                System.out.println("classloader == >");
+                Class<?> aClass = this.loadClass(item.getName());
+                method = aClass.getMethod("main", String[].class);
+                method.invoke(null, (Object) null);
+            } catch (NoSuchMethodException e) {
+                e.printStackTrace();
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            } catch (InvocationTargetException e) {
+                e.printStackTrace();
+            } catch (ClassNotFoundException exception) {
+                exception.printStackTrace();
+            }
+        });
+    }
 
     public static void main(String[] args) throws IOException {
-        new JarLoader().getJarFile("jar:file:/D:\\project\\B.Smile\\geek-study1\\project\\src\\main\\java\\top\\zsmile\\jvm\\classloader\\Hello.jar!/");
+        JarLoader jarLoader = new JarLoader();
+        jarLoader.getJarFile("jar:file:/C:\\Users\\Admin\\Desktop\\HelloWord.jar!/");
+        jarLoader.foreach();
+        Scanner in = new Scanner(System.in);
+        while (!in.next().equalsIgnoreCase("exit")) {
+            jarLoader.getJarFile("jar:file:/C:\\Users\\Admin\\Desktop\\HelloWord.jar!/");
+            jarLoader.foreach();
+        }
     }
 }
