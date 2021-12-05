@@ -1,14 +1,34 @@
 package top.zsmile.utils;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
 
 public class ClassLoaderUtils {
-    static class decodeClass {
+
+    public static void loopFiles(ClassLoaderManager.CommonClassloader loader, File file) throws MalformedURLException {
+        if (file.isDirectory()) {
+            File[] files = file.listFiles();
+            for (File tempFile : files) {
+                loopFiles(loader, tempFile);
+            }
+        } else {
+            String absolutePath = file.getAbsolutePath();
+            if (absolutePath.endsWith(".jar")) {
+                loader.urls.add(new URL("jar:file:/" + absolutePath + "!/"));
+            } else if (absolutePath.endsWith(".class")) {
+                loader.urls.add(new URL("file:/" + absolutePath));
+            }
+        }
+    }
+
+    static class codes {
 
         public static byte[] checkDecode(String decodeType, JarFile jarFile, JarEntry jarEntry) {
             byte[] decodeData = null;
